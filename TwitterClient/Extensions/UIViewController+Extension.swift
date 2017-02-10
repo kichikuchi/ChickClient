@@ -20,7 +20,7 @@ extension UIViewController {
 // MARK: - instance
 extension UIViewController {
     func showAPIErrorAlert(error: NSError) {
-        let errorMessage: String
+        var errorMessage = "ネットワークエラー。\n通信状況の良い場所で再度お試しください。"
         
         if let errorCode = error.userInfo["TWTRNetworkingStatusCode"] as? Int {
             switch errorCode {
@@ -29,13 +29,9 @@ extension UIViewController {
             case 429:
                 errorMessage = "APIのアクセス制限。\nしばらく待ってから再度お試しください。"
             case 500:
-                errorMessage = "メンテナンス中です。\n しばらく待ってから再度お試しください。"
-            default:
-                errorMessage = "ネットワークエラー。\n通信状況の良い場所で再度お試しください。"
+                errorMessage = "メンテナンス中。\n しばらく待ってから再度お試しください。"
+            default: break
             }
-            
-        } else {
-            errorMessage = "ネットワークエラーです。\n通信状況の良い場所で再度お試しください。"
         }
         
         
