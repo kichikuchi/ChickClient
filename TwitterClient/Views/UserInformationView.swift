@@ -87,13 +87,13 @@ extension UserInformationView {
     
     func bannerParallax(with offsetY: CGFloat) {
         if offsetY >= -250 && offsetY <= -64 {
-            let value = Math.map(value: Double(offsetY), inMin: -64, inMax: -250, outMin: 1, outMax: 2)
+            let value = Math.map(value: Double(offsetY), inmin: -64, inmax: -250, outmin: 1, outmax: 2)
             bannerImageView.transform = CGAffineTransform(scaleX: CGFloat(value), y: CGFloat(value))
             
-            let positionValue = Math.map(value: Double(offsetY), inMin: -64, inMax: -250, outMin: 0, outMax: 100)
+            let positionValue = Math.map(value: Double(offsetY), inmin: -64, inmax: -250, outmin: 0, outmax: 100)
             bannerImageView.center = CGPoint(x: bannerViewOriginalCenter.x, y: bannerViewOriginalCenter.y - CGFloat(positionValue))
         } else if offsetY > -64 && offsetY < 36 {
-            let positionValue = Math.map(value: Double(offsetY), inMin: -64, inMax: 36, outMin: 0, outMax: 30)
+            let positionValue = Math.map(value: Double(offsetY), inmin: -64, inmax: 36, outmin: 0, outmax: 30)
             bannerImageView.center = CGPoint(x: bannerViewOriginalCenter.x, y: bannerViewOriginalCenter.y + CGFloat(positionValue))
         }
     }

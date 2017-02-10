@@ -9,7 +9,7 @@
 import Foundation
 
 class Math {
-    static func map(value: Double, inMin inMin: Double, inMax inMax: Double, outMin outMin: Double, outMax outMax: Double) -> Double {
-        return (value - inMin) / (inMax - inMin) * (outMax - outMin) + outMin
+    static func map(value: Double, inmin: Double, inmax: Double, outmin: Double, outmax: Double) -> Double {
+        return (value - inmin) / (inmax - inmin) * (outmax - outmin) + outmin
     }
 }
